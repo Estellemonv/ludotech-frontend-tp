@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+.dialog-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #b3261e;
+}
+
+.dialog-title mat-icon {
+  color: #b3261e;
+}
+
+mat-dialog-content {
+  min-width: 320px;
+}
+
+.warning-text {
+  color: #6f6f6f;
+}
+
+mat-dialog-actions {
+  gap: 12px;
+  padding: 16px 24px 24px;
+}
+
+.delete-button {
+  background-color: #b3261e;
+  color: #ffffff;
+}

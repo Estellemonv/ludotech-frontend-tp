@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>{{ data.isEdit ? 'Modifier le livre' : 'Ajouter un livre' }}</h2>
+<mat-dialog-content><form [formGroup]="form" class="item-form">
+  <mat-form-field appearance="outline"><mat-label>Titre</mat-label><input matInput formControlName="book_name"></mat-form-field>
+  <mat-form-field appearance="outline"><mat-label>Auteur</mat-label><input matInput formControlName="author"></mat-form-field>
+  <mat-form-field appearance="outline"><mat-label>Année de parution</mat-label><input matInput type="number" formControlName="year_of_parution"></mat-form-field>
+  <mat-form-field appearance="outline"><mat-label>Genre</mat-label><input matInput formControlName="genre"></mat-form-field>
+  <mat-form-field appearance="outline"><mat-label>Statut</mat-label><mat-select formControlName="status"><mat-option value="Disponible">Disponible</mat-option><mat-option value="Emprunté">Emprunté</mat-option></mat-select></mat-form-field>
+</form></mat-dialog-content>
+<mat-dialog-actions align="end"><button mat-button (click)="cancel()">Annuler</button><button mat-flat-button color="primary" [disabled]="form.invalid" (click)="save()">Enregistrer</button></mat-dialog-actions>

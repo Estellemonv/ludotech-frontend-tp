@@ -1,0 +1,33 @@
+<main class="dashboard">
+	<header class="page-heading">
+		<p class="eyebrow">Ludotech</p>
+		<h1>Disponibilité du catalogue</h1>
+		<p>Suivez en un coup d'oeil les ressources disponibles et empruntées.</p>
+	</header>
+
+	@if (kpi(); as data) {
+		<section class="charts" aria-label="Indicateurs de disponibilité">
+			<article class="kpi-card">
+				<h2>Livres</h2>
+				<div class="chart-wrap"><canvas id="books-chart" aria-label="Répartition des livres empruntés et disponibles"></canvas><span class="chart-total">{{ total(data.nbLivreEmprunte, data.nbLivreDispo) }}</span></div>
+				<p><strong>{{ data.nbLivreDispo }}</strong> disponibles sur {{ total(data.nbLivreEmprunte, data.nbLivreDispo) }}</p>
+			</article>
+
+			<article class="kpi-card">
+				<h2>Films</h2>
+				<div class="chart-wrap"><canvas id="movies-chart" aria-label="Répartition des films empruntés et disponibles"></canvas><span class="chart-total">{{ total(data.nbFilmEmprunte, data.nbFilmDispo) }}</span></div>
+				<p><strong>{{ data.nbFilmDispo }}</strong> disponibles sur {{ total(data.nbFilmEmprunte, data.nbFilmDispo) }}</p>
+			</article>
+
+			<article class="kpi-card">
+				<h2>Jeux</h2>
+				<div class="chart-wrap"><canvas id="games-chart" aria-label="Répartition des jeux empruntés et disponibles"></canvas><span class="chart-total">{{ total(data.nbJeuEmprunte, data.nbJeuDispo) }}</span></div>
+				<p><strong>{{ data.nbJeuDispo }}</strong> disponibles sur {{ total(data.nbJeuEmprunte, data.nbJeuDispo) }}</p>
+			</article>
+		</section>
+	} @else if (error()) {
+		<p class="status-message">Les indicateurs ne peuvent pas être chargés pour le moment.</p>
+	} @else {
+		<p class="status-message">Chargement des indicateurs...</p>
+	}
+</main>

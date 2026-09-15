@@ -1,0 +1,17 @@
+<h2 mat-dialog-title class="dialog-title">
+  <mat-icon>warning</mat-icon>
+  Supprimer ce jeu ?
+</h2>
+
+<mat-dialog-content>
+  <p>Vous êtes sur le point de supprimer <strong>{{ gameName }}</strong>.</p>
+  <p class="warning-text">Cette action est irréversible.</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button [disabled]="isDeleting" (click)="cancel()">Annuler</button>
+  <button mat-flat-button class="delete-button" [disabled]="isDeleting" (click)="confirm()">
+    <mat-icon>delete</mat-icon>
+    {{ isDeleting ? 'Suppression...' : 'Supprimer' }}
+  </button>
+</mat-dialog-actions>

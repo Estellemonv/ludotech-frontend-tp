@@ -1,0 +1,80 @@
+<h2 mat-dialog-title class="dialog-title">
+  <div>
+    <p>Ajouter un jeu</p>
+  </div>
+</h2>
+
+<mat-dialog-content>
+
+  <form [formGroup]="form" class="game-form">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nom du jeu</mat-label>
+      <mat-icon matPrefix>sports_esports</mat-icon>
+      <input matInput formControlName="gameName">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre de joueurs</mat-label>
+      <mat-icon matPrefix>groups</mat-icon>
+      <input
+        matInput
+        formControlName="numberOfPlayers">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Temps de jeu</mat-label>
+      <mat-icon matPrefix>schedule</mat-icon>
+      <input
+        matInput
+        placeholder="30 min"
+        formControlName="timeOfGame">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Statut</mat-label>
+
+      <mat-icon matPrefix>sell</mat-icon>
+
+      <mat-select formControlName="status">
+
+        <mat-option value="Disponible">
+          Disponible
+        </mat-option>
+
+        <mat-option value="Emprunté">
+          Emprunté
+        </mat-option>
+
+      </mat-select>
+
+    </mat-form-field>
+
+  </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+
+  <button
+    mat-button
+    (click)="cancel()">
+
+    Annuler
+
+  </button>
+
+  <button
+    mat-flat-button
+    color="primary"
+    [disabled]="form.invalid"
+    (click)="save()">
+
+    <mat-icon>save</mat-icon>
+
+    Enregistrer
+
+  </button>
+
+</mat-dialog-actions>

@@ -1,0 +1,3 @@
+.dialog-title { display: flex; align-items: center; gap: 12px; color: #b3261e; }
+.warning-text { color: #606060; }
+.delete-button { background: #b3261e; color: #fff; }

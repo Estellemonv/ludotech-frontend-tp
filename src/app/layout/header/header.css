@@ -1,0 +1,30 @@
+.header {
+  height: 72px;
+  width: 100%;              /* prend toute la largeur */
+  display: flex;
+  align-items: center;
+
+  background: #696bd8;
+  padding: 0 16px;          /* un peu d’air sur les côtés */
+}
+
+/* bouton reste à gauche naturellement */
+button {
+  flex: 0 0 auto;
+}
+
+/* titre centré */
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+}
+
+/* pousse éventuellement d'autres éléments à droite si besoin */
+.spacer {
+  margin-left: auto;
+}

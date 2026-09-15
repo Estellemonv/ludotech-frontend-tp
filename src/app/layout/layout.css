@@ -1,0 +1,45 @@
+.sidenav-container {
+  height: 100vh;
+  background-color: rgba(67, 69, 77, 0.05);
+}
+
+/* Sidebar normal */
+.sidenav {
+  width: 150px;
+  transition: width 0.25s ease;
+  overflow-x: hidden;
+  border-radius: 0 !important;
+  background: #aeaeb4;
+}
+
+/* Sidebar réduite */
+.sidenav.collapsed {
+  width: 72px;
+}
+
+/* Align icons nicely */
+mat-nav-list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Hide text when collapsed handled via *ngIf */
+
+/* Content spacing */
+.content {
+  padding: 20px;
+}
+
+.label {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+a.mat-list-item.active {
+  background-color: rgba(0, 0, 0, 0.25); /* plus foncé */
+  border-radius: 8px;
+}

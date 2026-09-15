@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>{{ data.isEdit ? 'Modifier le film' : 'Ajouter un film' }}</h2>
+<mat-dialog-content><form [formGroup]="form" class="item-form">
+  <mat-form-field appearance="outline"><mat-label>Titre</mat-label><input matInput formControlName="name"></mat-form-field>
+  <mat-form-field appearance="outline"><mat-label>Durée</mat-label><input matInput formControlName="duration" placeholder="120 min"></mat-form-field>
+  <mat-form-field appearance="outline"><mat-label>Réalisateur</mat-label><input matInput formControlName="realisateur"></mat-form-field>
+  <mat-form-field appearance="outline"><mat-label>Genre</mat-label><input matInput formControlName="genre"></mat-form-field>
+  <mat-form-field appearance="outline"><mat-label>Statut</mat-label><mat-select formControlName="status"><mat-option value="Disponible">Disponible</mat-option><mat-option value="Emprunté">Emprunté</mat-option></mat-select></mat-form-field>
+</form></mat-dialog-content>
+<mat-dialog-actions align="end"><button mat-button (click)="cancel()">Annuler</button><button mat-flat-button color="primary" [disabled]="form.invalid" (click)="save()">Enregistrer</button></mat-dialog-actions>
