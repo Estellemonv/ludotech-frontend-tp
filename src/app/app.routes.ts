@@ -24,7 +24,7 @@ export const routes: Routes = [
       },
       {
         path: 'movie',
-        component: Movie
+        component: MovieComponent
       }
     ]
   },
