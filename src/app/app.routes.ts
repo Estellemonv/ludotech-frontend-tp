@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { Layout } from './layout/layout';
-import { BookComponent } from './book/book';
+import { BookComponent } from './book/book-component';
 import { GameComponent } from './game/game-component';
-import { Movie } from './movie/movie';
+import { MovieComponent } from './movie/movie-component';
 
 export const routes: Routes = [
   {
