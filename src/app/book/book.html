@@ -12,7 +12,7 @@
 				<mat-icon matSuffix>search</mat-icon>
 			</mat-form-field>
 
-			<button mat-flat-button color="primary" class="add-button" (click)="openForm()">
+			<button mat-flat-button color="primary" class="add-button" (click)="addBook()">
 				<mat-icon>add</mat-icon>
 				Ajouter un livre
 			</button>
@@ -47,7 +47,7 @@
 			<ng-container matColumnDef="actions">
 				<th mat-header-cell *matHeaderCellDef>Actions</th>
 				<td mat-cell *matCellDef="let book">
-					<button mat-icon-button (click)="openForm(book)" aria-label="Modifier">
+					<button mat-icon-button (click)="editBook(book)" aria-label="Modifier">
 						<mat-icon>edit</mat-icon>
 					</button>
 					<button mat-icon-button (click)="deleteBook(book)" aria-label="Supprimer">
