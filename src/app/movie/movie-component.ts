@@ -37,7 +37,7 @@ export class MovieComponent implements OnInit {
     };
   }
 
-   private loadGames(): void {
+   private loadMovies(): void {
     this.movieService.getMovies().subscribe({
       next: (movies) => {
         this.dataSource.data = movies;
@@ -53,7 +53,7 @@ export class MovieComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  editGame(movie: Movie): void {
+  editMovie(movie: Movie): void {
   const dialogRef = this.dialog.open(MovieForm, {
       width: '600px',
       disableClose: true,
@@ -66,12 +66,12 @@ export class MovieComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log(result);
-        this.loadGames();
+        this.loadMovies();
       }
     });
   }
 
-  AddGame(movie: Movie | null = null): void {
+  addMovie(movie: Movie | null = null): void {
 
     const dialogRef = this.dialog.open(MovieForm, {
       width: '600px',
@@ -85,14 +85,14 @@ export class MovieComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log(result);
-        this.loadGames();
+        this.loadMovies();
       }
     });
 
   }
 
 
-  deleteGame(movie: Movie): void {
+  deleteMovie(movie: Movie): void {
     const dialogRef = this.dialog.open(DeleteMovieDialog, {
       width: '420px',
       disableClose: true,
@@ -101,7 +101,7 @@ export class MovieComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed) {
-        this.loadGames();
+        this.loadMovies();
       }
     });
   }
