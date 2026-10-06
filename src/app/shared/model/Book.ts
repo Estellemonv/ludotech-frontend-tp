@@ -1,7 +1,7 @@
 export interface Book {
-  book_name: string;
+  bookName: string;
   author: string;
-  year_of_parution: string;
+  yearOfParution: string;
   genre: string;
   status: string;
 }
